@@ -1,5 +1,5 @@
 (function(){
-    nls.set('brx.void.Dummy', {
+    nls.set('brx.Void.Dummy', {
 //       'string': 'translation',
     });
 }).call(this);

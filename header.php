@@ -112,7 +112,7 @@
 //            wp_enqueue_script('bootstrap');
             wp_enqueue_script('modernizr');
             wp_enqueue_script('jquery-scrolly');
-            wp_enqueue_style('brx.void.body');
+            wp_enqueue_style('brx.Void.body');
         ?>
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <link rel="shortcut icon" href="<?php brx_Void::baseUrl();?>res/img/favicon.ico">

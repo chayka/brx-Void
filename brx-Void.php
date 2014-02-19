@@ -199,13 +199,13 @@ class brx_Void extends WpTheme{
     }
     
     public function registerResources($minimize = false){
-        $this->registerStyle('brx.void.body', 'brx.void.body.less');
-        $this->registerStyle('brx.void.mainPage', 'brx.void.mainPage.less');
-        $this->registerStyle('brx.void.viewEntry', 'brx.void.viewEntry.less');
-        $this->registerStyle('brx.void.404', 'brx.void.404.less');
-        $this->registerStyle('brx.void.Dummy.view', 'void.Dummy.view.less', array());
-        $this->registerScript('brx.void.Dummy.view', 'void.Dummy.view.view.js', array('backbone-brx', 'brx.void.Dummy.nls'));
-        NlsHelper::registerScriptNls('brx.void.Dummy.nls', 'brx.void.Dummy.view.js');
+        $this->registerStyle('brx.Void.body', 'brx.Void.body.less');
+        $this->registerStyle('brx.Void.mainPage', 'brx.Void.mainPage.less');
+        $this->registerStyle('brx.Void.viewEntry', 'brx.Void.viewEntry.less');
+        $this->registerStyle('brx.Void.404', 'brx.Void.404.less');
+        $this->registerStyle('brx.Void.Dummy.view', 'void.Dummy.view.less', array());
+        $this->registerScript('brx.Void.Dummy.view', 'void.Dummy.view.view.js', array('backbone-brx', 'brx.Void.Dummy.nls'));
+        NlsHelper::registerScriptNls('brx.Void.Dummy.nls', 'brx.Void.Dummy.view.js');
     }
     
     public function registerActions(){

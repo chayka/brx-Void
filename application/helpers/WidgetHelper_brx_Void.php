@@ -8,10 +8,10 @@ class WidgetHelper_brx_Void extends WidgetHelper{
     }
     
     public static function renderDummy($user){
-        return self::renderWidget(array('user'=>$user), 'widgets/brx.void.Dummy.view.phtml', 'brx.void.Dummy.view');
+        return self::renderWidget(array('user'=>$user), 'widgets/brx.Void.Dummy.view.phtml', 'brx.Void.Dummy.view');
     }
 
     public static function renderDummyForm($user){
-        return self::renderWidget(array('user'=>$user), 'widgets/brx.void.DummyForm.view.phtml', 'brx.void.DummyForm.view');
+        return self::renderWidget(array('user'=>$user), 'widgets/brx.Void.DummyForm.view.phtml', 'brx.Void.DummyForm.view');
     }
 }

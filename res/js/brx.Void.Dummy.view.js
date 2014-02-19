@@ -1,7 +1,7 @@
 (function($, _){
-    _.declare('brx.void.Dummy', $.brx.View, {
+    _.declare('brx.Void.Dummy', $.brx.View, {
         
-        nlsNamespace: 'brx.void.Dummy',
+        nlsNamespace: 'brx.Void.Dummy',
         
         options:{
             name: 'John Smith'
