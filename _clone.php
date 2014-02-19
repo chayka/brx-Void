@@ -183,6 +183,10 @@ END;
     searchReplaceCopy('./res', $destDir.'/res', array_keys($tr), array_values($tr), 0777, $owner, $group);
     
     if(getItem($params, 'netbeans')){
+        if($isPlugin){
+            $tr['wpt']='wpp';
+            $tr['themes']='plugins';
+        }
         searchReplaceCopy('./nbproject', $destDir.'/nbproject', array_keys($tr), array_values($tr), 0777, $owner, $group);
     }
     
