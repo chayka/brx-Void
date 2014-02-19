@@ -1,0 +1,24 @@
+<?php
+
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+?>
+<div class="metabox-seo_params">
+    <div class="form_field stretch field_seo_keywords">
+        <label class="width10">Title:</label>
+        <span class="form_field-input_box"><input name="metabox_seo_title" type="text" value="<?php echo $this->escape($this->seo_title); ?>"/></span>
+        <div class="form_field-tips"></div>
+    </div>
+    <div class="form_field fullsize field_seo_keywords">
+        <label>Keywords:</label>
+        <span class="form_field-input_box"><textarea name="metabox_seo_keywords" ><?php echo $this->escape($this->seo_keywords); ?></textarea></span>
+        <div class="form_field-tips"></div>
+    </div>
+    <div class="form_field fullsize field_seo_description">
+        <label>Description:</label>
+        <span class="form_field-input_box"><textarea name="metabox_seo_description" ><?php echo $this->escape($this->seo_description); ?></textarea></span>
+        <div class="form_field-tips"></div>
+    </div>
+</div>

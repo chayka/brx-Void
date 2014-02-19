@@ -1,0 +1,13 @@
+<div class="entries">
+    <h1>Записи <?php 
+        if(is_category()){printf("в рубрике &quot%s&quot;", single_cat_title('', false));}
+        if(is_tag()){printf("с меткой &quot%s&quot;", single_tag_title('', false));}
+        ?></h1>
+<?php   
+foreach ($this->posts as $post) {
+    echo $this->partial('post/list-entry.phtml', array('post'=>$post));
+}
+echo $this->pagination->render(array(), 'pagination brx_Void');
+?>
+</div>    
+<?php

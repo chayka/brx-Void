@@ -1,0 +1,57 @@
+@import 'brx.void.common.less';
+
+html{
+    height: 100%;
+    body{
+        height: 100%;
+        min-height: 100%;
+        .container{
+            width: @size_width_content;
+            margin: 0 auto;
+        }
+        .brx_void-header{
+            height: @size_height_header;
+            width: 100%;
+            position: fixed;
+            background-color: gray;
+            .box-sizing;
+                
+            .logo{
+                
+            }
+            .top_navbar{
+                
+            }
+        }
+        .brx_void-body{
+            padding-top: (@size_height_header);
+            padding-bottom: (@size_height_footer);
+            min-height: 100%;
+            .box-sizing;
+            
+        }
+        .brx_void-footer{
+            height: @size_height_footer;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            /*margin-top: -@size_height_footer;*/
+            .box-sizing;
+            background-color: gray;
+            .brx_void-bottom{
+                
+            }
+        }
+        
+        #scroll_top_button{
+            position: fixed;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            right: 30px;
+            bottom: (@size_height_footer + 30px);
+            text-align: center;
+            
+        }
+    }
+}

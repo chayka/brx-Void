@@ -1,0 +1,34 @@
+<div class="wrap bem-zf_core-admin">
+    <div id="icon-options-general" class="icon32">
+        <br/>
+    </div>
+    <h2>Настройки темы</h2>
+</div>
+
+<div class="brx-options_form" data-view="brx.OptionsForm" data-scope="site" data-prefix="theme" style="display: none;">
+    <div class="form_fields">
+        <div class="form_field stretch field_template" data-attach-point="fields.seo_title">
+            <label class="width50">Title</label>
+            <span class="form_field-input_box"><input name="seo_title" type="text" value=""/></span>
+            <div class="form_field-tips"></div>
+        </div>
+        <div class="form_field stretch field_mail_from" data-attach-point="fields.seo_keywords">
+            <label class="width35">Keywords:</label>
+            <span class="form_field-input_box"><input name="seo_keywords" type="text" value=""/></span>
+            <div class="form_field-tips"></div>
+        </div>
+        <div class="form_field stretch field_from_name" data-attach-point="fields.seo_description">
+            <label class="width35">Description:</label>
+            <span class="form_field-input_box"><input name="seo_description" type="text" value=""/></span>
+            <div class="form_field-tips"></div>
+        </div>
+    </div>
+    <div class="button_pane">
+        <button class="button button-large button-primary" data-attach-event="saveOptions">Сохранить</button>
+    </div>
+    <script type="text/javascript">
+    //    window.setupOptions = <?php //echo JsonHelper::encode($this->options);?>;
+    </script>
+</div>
+<?php WidgetHelper::renderMultiSpinner();?>
+<?php ZF_Core::addJQueryWidgets();?>
