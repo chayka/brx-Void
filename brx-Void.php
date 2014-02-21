@@ -52,9 +52,9 @@ class brx_Void extends WpTheme{
 
     public static function registerCustomPostTypeDummy() {
         $labels = array(
-            'name' => NlsHelper::_('Dummy', 'post type general name'),
-            'singular_name' => NlsHelper::_('Dummy', 'post type singular name'),
-            'add_new' => NlsHelper::_('Add dummy', 'catalog item'),
+            'name' => NlsHelper::_('Dummy'), //'post type general name'),
+            'singular_name' => NlsHelper::_('Dummy'), //'post type singular name'),
+            'add_new' => NlsHelper::_('Add dummy'), //'item'),
             'add_new_item' => NlsHelper::_('Add dummy'),
             'edit_item' => NlsHelper::_('Edit'),
             'new_item' => NlsHelper::_('New dummy'),
@@ -117,8 +117,8 @@ class brx_Void extends WpTheme{
 
     public static function registerTaxonomyDummyTag(){
         $labels = array(
-            'name' => NlsHelper::_('Dummy tags', 'taxonomy general name'),
-            'singular_name' => NlsHelper::_('Dummy tag', 'taxonomy singular name'),
+            'name' => NlsHelper::_('Dummy tags'), //'taxonomy general name'),
+            'singular_name' => NlsHelper::_('Dummy tag'), //'taxonomy singular name'),
             'search_items' => NlsHelper::_('Find dummy tag'),
             'all_items' => NlsHelper::_('All dummy tags'),
             'edit_item' => NlsHelper::_('Edit'),

@@ -128,6 +128,9 @@ function main(){
     $isPlugin = getItem($params, 'plugin');
     $isPluginStr = $isPlugin? 'yes':'no';
     
+    $netbeans = getItem($params, 'netbeans');
+    $netbeansStr = $netbeans?'yes':'no';
+    
     $baseDir = getItem($data, 'base', '../');
     $destDir = realpath($baseDir).'/'.$projectName.($isPlugin?'.wpp':'.wpt');
     
@@ -145,7 +148,7 @@ echo <<<END
         
     isPlugin:   $isPluginStr
         
-    group   :   $group
+    netbeans:   $netbeansStr
 
 is everything ok? (Y/n):
 
@@ -181,16 +184,25 @@ END;
     searchReplaceCopy('./library', $destDir.'/library', array_keys($tr), array_values($tr), 0755, $owner, $group);
     searchReplaceCopy('./nls', $destDir.'/nls', array_keys($tr), array_values($tr), 0755, $owner, $group);
     searchReplaceCopy('./res', $destDir.'/res', array_keys($tr), array_values($tr), 0777, $owner, $group);
+    searchReplaceCopy('./tests', $destDir.'/tests', array_keys($tr), array_values($tr), 0755, $owner, $group);
+    searchReplaceCopy('./public', $destDir.'/public', array_keys($tr), array_values($tr), 0755, $owner, $group);
+    searchReplaceCopy('./.gitignore', $destDir.'/.gitignore', array_keys($tr), array_values($tr), 0755, $owner, $group);
     
-    if(getItem($params, 'netbeans')){
+    if($netbeans){
+        $tr['<name>brx-Void</name>']='<name>brx-Void.wpt</name>';
         if($isPlugin){
             $tr['wpt']='wpp';
             $tr['themes']='plugins';
+            $tr['<name>brx-Void</name>']='<name>brx-Void.wpp</name>';
         }
         searchReplaceCopy('./nbproject', $destDir.'/nbproject', array_keys($tr), array_values($tr), 0777, $owner, $group);
+        searchReplaceCopy('./.zfproject.xml', $destDir.'/.zfproject.xml', array_keys($tr), array_values($tr), 0755, $owner, $group);
+        unset($tr['<name>brx-Void</name>']);
     }
     
     if($isPlugin){
+        $tr['WpTheme']='WpPlugin';
+        $tr['theme']='plugin';
         searchReplaceCopy('./brx-Void.php', $destDir.'/brx-Void.wpp.php', array_keys($tr), array_values($tr), 0777, $owner, $group);
     }else{
         searchReplaceCopy('./brx-Void.php', $destDir.'/brx-Void.wpt.php', array_keys($tr), array_values($tr), 0777, $owner, $group);
