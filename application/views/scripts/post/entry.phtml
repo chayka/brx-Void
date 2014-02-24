@@ -1,3 +1,41 @@
-<div class="brx_void-list_entry">
-    <div class="title"><a href="<?php echo $this->post->getHref();?>"><?php echo $this->post->getTitle();?></a></div>
+<?php
+//Util::print_r($this->post);
+    $this->post->populateWpGlobals();
+    global $post;
+    $post = $this->post->getWpPost();
+    $author = UserModel::selectById($this->post->getUserId());
+    
+?>
+<?php wp_enqueue_style('wpt-jurcatalog-by-entry'); wp_print_styles();?>
+
+<div class="brx_void-entry post_type-<?php echo $this->post->getType();?>">
+    <?php edit_post_link('Редактировать', '<span class="edit_link">','</span>'); ?>
+    <h1><?php the_title();?></h1>
+    <div class="entry_signature">
+        <?php echo get_avatar($this->post->getUserId(), 80);?>
+        <?php if($author):?>
+        <div class="entry_author">
+            <a href="<?php echo $author->getProfileLink()?>"><?php echo $author->getDisplayName();?></a>
+        </div>
+        <?php endif;?>
+        <div class="entry_date">
+            <?php echo $this->post->getDtCreated()->toString('d MMMM yyyy HH:m')?>
+        </div>
+    </div>
+    <div class="entry_content"><?php echo apply_filters('the_content', $this->post->getContent(false));?></div>
+    <div class="tags_box">
+        <?php 
+            $taxonomies = get_taxonomies(array('public'=>true, '_builtin'=>true), 'objects');           
+            foreach ($taxonomies as $taxName => $taxonomy):
+                $terms = wp_get_post_terms($post->ID, $taxName, array('fields'=>'all'));
+                if(count($terms)):
+        ?>
+        <div class="tags <?php echo $taxName?>"><span class="title"><?php echo $taxonomy->labels->name;?>: </span><div><?php echo get_the_term_list( $post->ID, $taxName, '', ', ', '' );?></div></div>
+        <?php endif; endforeach;?>
+    </div>
+    <?php echo $this->render('post/socials.phtml');?>
+    <?php HtmlHelper_brx_Void::renderPostAttachments($this->post);?>
+    <?php // wpp_BRX_Comments::renderComments($post);?>
 </div>
+
+

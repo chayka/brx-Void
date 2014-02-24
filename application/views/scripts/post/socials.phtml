@@ -1,0 +1,15 @@
+<div class="post_socials">
+    <div class="post_socials-right">
+        <i class="icon-entry-views"></i>
+        <span class="entry-views_count"><?php echo $this->post->getReviewsCount();?></span>
+    </div>
+    <div class="post_socials-left">
+        <div class="post_socials-linked_in social_item">
+            <script type="IN/Share" data-counter="right"></script>
+        </div>
+        <div class="post_socials-fb social_item">
+            <div class="fb-like" data-href="http://<?php echo Util::serverName().$this->post->getHref();?>" data-layout="button_count" data-show-faces="false" data-send="true"></div>            
+        </div>
+    </div>
+    <div class="clearfloat"></div>
+</div>

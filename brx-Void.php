@@ -1,7 +1,7 @@
 <?php
 
 require_once 'application/helpers/WidgetHelper_brx_Void.php';
-
+require_once 'application/helpers/HtmlHelper_brx_Void.php';
 class brx_Void extends WpTheme{
     
     protected static $instance = null;

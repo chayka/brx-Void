@@ -1,5 +1,7 @@
 <div class="brx_void-list_entry">
     <div class="title"><a href="<?php echo $this->post->getHref();?>"><?php echo $this->post->getTitle();?></a></div>
+    <div class="excerpt"><?php echo $this->post->getExcerpt();?></div>
+    <div class="date"><?php echo $this->post->getDtCreated()->toString('d MMMM yyyy HH:m');?></div>
 </div>
 
 <?php

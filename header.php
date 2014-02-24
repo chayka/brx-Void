@@ -131,6 +131,9 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
+        <?php //SocialHelper::fbInit('155736051299351', 'ru_RU');?>
+        <?php //SocialHelper::linkedInInit('ru_RU');?>
+
 <?php if ( is_active_sidebar( 'stats-counters' ) ) : ?>
 	<div id="statsCounters" style="display: none;">
             <?php dynamic_sidebar( 'stats-counters' ); ?>

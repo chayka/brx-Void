@@ -1,0 +1,10 @@
+<?php if(count($this->attachments)):?>
+<div class="attachments">
+    <label>Скачать:</label>
+    <?php foreach ($this->attachments as $attachment):?>
+    <a class="attachment" <?php if($attachment->isAttachmentImage()):?>target="attachment"<?php endif;?> href="<?php echo $attachment->getAttachmentUrl();?>"><?php $iconUrl= Util::getItem($attachment->loadImageData('icon'), 'url');?>
+        <img class="icon" src="<?php echo $iconUrl;?>"/><?php echo $attachment->getTitle();?>
+    </a>
+    <?php endforeach;?>
+</div>
+<?php endif;?>
