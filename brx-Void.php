@@ -1,5 +1,13 @@
 <?php
-
+/*
+  Plugin Name: brx-Void
+  Plugin URI: http://github.com/chayka/brx-Void.git
+  Description: Empty plugin.
+  Version: 1.0
+  Author: Boris Mossounov
+  Author URI: http://facebook.com/mossounov
+  License: GPL2
+ */
 require_once 'application/helpers/WidgetHelper_brx_Void.php';
 require_once 'application/helpers/HtmlHelper_brx_Void.php';
 class brx_Void extends WpTheme{

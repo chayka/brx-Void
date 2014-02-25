@@ -1,6 +1,6 @@
 <?php
 
-require_once 'application/helpers/_FsHelper.php';
+//require_once 'application/helpers/_FsHelper.php';
 
 function getItem($data, $key, $defaultValue = "") {
     $value = $defaultValue;
@@ -189,11 +189,11 @@ END;
     searchReplaceCopy('./.gitignore', $destDir.'/.gitignore', array_keys($tr), array_values($tr), 0755, $owner, $group);
     
     if($netbeans){
-        $tr['<name>brx-Void</name>']='<name>brx-Void.wpt</name>';
+        $tr["<name>$projectName</name>"]="<name>$projectName.wpt</name>";
         if($isPlugin){
             $tr['wpt']='wpp';
             $tr['themes']='plugins';
-            $tr['<name>brx-Void</name>']='<name>brx-Void.wpp</name>';
+            $tr["<name>$projectName</name>"]="<name>$projectName.wpp</name>";
         }
         searchReplaceCopy('./nbproject', $destDir.'/nbproject', array_keys($tr), array_values($tr), 0777, $owner, $group);
         searchReplaceCopy('./.zfproject.xml', $destDir.'/.zfproject.xml', array_keys($tr), array_values($tr), 0755, $owner, $group);
