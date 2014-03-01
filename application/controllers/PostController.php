@@ -26,19 +26,20 @@ class brx_Void_PostController extends Zend_Controller_Action{
                     die();
                 }
             }else{
-                WpHelper::setNotFound(true);
+                ZF_Query::setNotFound(true);
                 return;
             }
         }
         
         $post->incReviewsCount();
 
-        WpHelper::setPostTitle($post->getTitle());
-        WpHelper::setPostId($post->getId());
-        WpHelper::setSideBarId('entry-'.$post->getType());
-        HtmlHelper::setPostMeta($post);
-        
+//        ZF_Query::setPostTitle($post->getTitle());
+//        ZF_Query::setPostId($post->getId());
+        ZF_Query::setPost($post);
+        HtmlHelper::setSidebarId('entry-'.$post->getType());
+        HtmlHelper::setPost($post);
         $this->view->post = $post;
+        wp_enqueue_style('brx.Void.viewEntry');        
     }
     
     public function listAction(){
@@ -50,15 +51,17 @@ class brx_Void_PostController extends Zend_Controller_Action{
 
 //        $link = get_pagenum_link(65635);
 //        $linkPattern = str_replace('65635', '.page.', $link);
-        $linkPattern = HtmlHelper::getMeta('_linkPattern', 'page/.page.');
-        $pagination = new PaginationModel();
+//        $linkPattern = HtmlHelper::getMeta('_linkPattern', 'page/.page.');
+        $pagination = PaginationModel::getInstance();
         $pagination->setCurrentPage($page);
         $pagination->setTotalPages(PostModel::getWpQuery()->max_num_pages);
-        $pagination->setPageLinkPattern($linkPattern);
-
+        if(!$pagination->getPageLinkPattern()){
+            $pagination->setPageLinkPattern('page/.page.');
+        }
+    
         $this->view->pagination = $pagination;
         $this->view->posts = $posts;
-
+        wp_enqueue_style('brx.Void.listEntries');
     }
 }
 

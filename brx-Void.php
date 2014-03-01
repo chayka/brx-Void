@@ -210,6 +210,7 @@ class brx_Void extends WpTheme{
         $this->registerStyle('brx.Void.body', 'brx.Void.body.less');
         $this->registerStyle('brx.Void.mainPage', 'brx.Void.mainPage.less');
         $this->registerStyle('brx.Void.viewEntry', 'brx.Void.viewEntry.less');
+        $this->registerStyle('brx.Void.listEntries', 'brx.Void.listEntries.less');
         $this->registerStyle('brx.Void.404', 'brx.Void.404.less');
         $this->registerStyle('brx.Void.Dummy.view', 'void.Dummy.view.less', array());
         $this->registerScript('brx.Void.Dummy.view', 'void.Dummy.view.view.js', array('backbone-brx', 'brx.Void.Dummy.nls'));

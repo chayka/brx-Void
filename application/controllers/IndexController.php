@@ -20,6 +20,9 @@ class brx_Void_IndexController extends Zend_Controller_Action
                 ->postsPerPage(10)
                 ->ignoreStickyPosts()
                 ->select();
+        
+        wp_enqueue_style('brx.Void.mainPage');
+        
         $this->_forward('list', 'post', 'brx_Void');
     }
 

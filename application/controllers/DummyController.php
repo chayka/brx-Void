@@ -26,17 +26,18 @@ class brx_Void_DummyController extends Zend_Controller_Action{
                     die();
                 }
             }else{
-                WpHelper::setNotFound(true);
+                ZF_Query::setNotFound(true);
                 return;
             }
         }
         
         $post->incReviewsCount();
 
-        WpHelper::setPostTitle($post->getTitle());
-        WpHelper::setPostId($post->getId());
-        WpHelper::setSideBarId('dummy-'.$post->getType());
-        HtmlHelper::setPostMeta($post);
+//        ZF_Query::setPostTitle($post->getTitle());
+//        ZF_Query::setPostId($post->getId());
+        ZF_Query::setPost($post);
+        HtmlHelper::setSidebarId('dummy-'.$post->getType());
+        HtmlHelper::setPost($post);
         
         $this->view->post = $post;
     }

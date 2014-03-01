@@ -6,7 +6,7 @@ class brx_Void_Bootstrap extends WpPluginBootstrap{
 
     public function run(){
         parent::run();
-        WpHelper::getInstance();
+//        WpHelper::getInstance();
         
     }
     
@@ -18,7 +18,7 @@ class brx_Void_Bootstrap extends WpPluginBootstrap{
         $router = parent::setupRouting();
         $router->addRoute('post', new Zend_Controller_Router_Route('entry/:id/:post_name', array('controller' => 'post', 'action'=>'entry', 'module'=>self::MODULE), array('id'=>'\d+')));
         $router->addRoute('dummy', new Zend_Controller_Router_Route('dummy/:id/:post_name', array('controller' => 'dummy', 'action'=>'entry', 'module'=>self::MODULE), array('id'=>'\d+')));
-        $router->addRoute('dummies', new Zend_Controller_Router_Route('dummies/:page', array('controller' => 'dummy', 'action'=>'list', 'module'=>self::MODULE, $page = 1), array('page'=>'\d+')));
+        $router->addRoute('dummies', new Zend_Controller_Router_Route('dummies/:page', array('controller' => 'dummy', 'action'=>'list', 'module'=>self::MODULE, 'page' => 1), array('page'=>'\d+')));
 
         //  Uncomment this if you need custom 404 page 
         //  and customize ErrorController->notFound404Action() and it's view
